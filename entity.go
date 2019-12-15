@@ -52,7 +52,7 @@ func (e *Entity) CreatedBy() string {
 	return e.createdBy
 }
 
-func (e *Entity) ModfifiedBy() string {
+func (e *Entity) ModifiedBy() string {
 	return e.modifiedBy
 }
 
