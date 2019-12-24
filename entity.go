@@ -73,7 +73,7 @@ func (e *Entity) Delete(userId string) {
 	e.deletedBy = userId
 }
 
-func (e *Entity) UnDelete() {
+func (e *Entity) Restore() {
 	e.deletedDate = time.Time{}
 	e.deletedBy = ""
 }
