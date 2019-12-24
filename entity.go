@@ -49,24 +49,12 @@ func (e *Entity) Id() string {
 	return e.id
 }
 
-func (e *Entity) SetId(id string) {
-	e.id = id
-}
-
 func (e *Entity) CreatedAt() time.Time {
 	return e.createdAt
 }
 
-func (e *Entity) SetCreatedAt(t time.Time) {
-	e.createdAt = t
-}
-
 func (e *Entity) ModifiedAt() time.Time {
 	return e.modifiedAt
-}
-
-func (e *Entity) SetModifiedAt(t time.Time) {
-	e.modifiedAt = t
 }
 
 func (e *Entity) CreatedBy() string {
