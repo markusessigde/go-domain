@@ -24,6 +24,15 @@ func NewEntityWithId(id string) *Entity {
 	return &Entity{id: id, createdAt: time.Now()}
 }
 
+func NewEntity(id string,
+	createdAt, modifiedAt time.Time,
+	createdBy, modifiedBy string,
+	deletedDate time.Time,
+	deletedBy string,
+) *Entity {
+	return &Entity{id, createdAt, modifiedAt, createdBy, modifiedBy, deletedDate, deletedBy}
+}
+
 func GenerateId() string {
 	id, err := uuid.GenerateUUID()
 	if err != nil {
@@ -40,12 +49,24 @@ func (e *Entity) Id() string {
 	return e.id
 }
 
+func (e *Entity) SetId(id string) {
+	e.id = id
+}
+
 func (e *Entity) CreatedAt() time.Time {
 	return e.createdAt
 }
 
+func (e *Entity) SetCreatedAt(t time.Time) {
+	e.createdAt = t
+}
+
 func (e *Entity) ModifiedAt() time.Time {
 	return e.modifiedAt
+}
+
+func (e *Entity) SetModifiedAt(t time.Time) {
+	e.modifiedAt = t
 }
 
 func (e *Entity) CreatedBy() string {
